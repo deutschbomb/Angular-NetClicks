@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1194px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header {
+    margin: 34px 0 15px 0;
+}
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo h1 {
+    margin: 0;
+
+    line-height: 29px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.header-logo p {
+    margin: 0;
+
+    line-height: 15px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.header-controls a {
+    line-height: 17px;
+    text-decoration: none;
+
+    color: rgb(0, 0, 0);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header-controls a:hover {
+    color: rgb(255, 73, 73);
+}
+
+.header-controls--mobile {
+    display: none;
+}
+
+.search-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+    height: 50px;
+    padding: 3px;
+
+    border-radius: 5px;
+
+    background: rgb(255, 73, 73);
+}
+
+.search-box input {
+    flex-grow: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 30px;
+
+    border: none;
+    border-radius: 3px;
+    
+    outline: none;
+
+    background: rgb(255, 255, 255);
+}
+
+.search-box button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+
+    border: none;
+
+    line-height: 17px;
+
+    background: rgb(255, 73, 73);
+    color: rgb(255, 255, 255);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header-controls {
+        display: none;
+    }
+
+    .header-controls--mobile {
+        display: block;
+    }
+
+    .search-box input {
+        padding: 0 15px;
+    }
+}
