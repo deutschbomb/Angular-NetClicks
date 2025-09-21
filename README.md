@@ -6,7 +6,7 @@
 
 1. [Layout: Main page](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/3d25ae7c528f4f300103fd0c32c971a1bbf6dff1)
 2. [Layout: Main page and movie page](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/35423d15195d5fa29cb2980acd07042c73618b76)
-3. [JavaScript: Searching event](#)
+3. [JavaScript: Searching event](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/91313420c57a8d05729fd4e43d537e02c51c866f)
 
 ---
 
