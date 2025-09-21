@@ -1,7 +1,14 @@
 # Frontend Intensive Training Course
 
 ### Streaming Service (Online Movie Theater)
-___________________________________________________
+
+---
+
+1. [Layout: Main page](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/3d25ae7c528f4f300103fd0c32c971a1bbf6dff1)
+2. [Layout: Main page and movie page](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/35423d15195d5fa29cb2980acd07042c73618b76)
+3. [JavaScript: Searching event](#)
+
+---
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
