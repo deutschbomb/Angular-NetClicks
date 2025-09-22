@@ -1,0 +1,16 @@
+app-movie-card {
+    width: calc((100% - 30px * 2) / 3);
+}
+
+@media (max-width: 991px) {
+    app-movie-card {
+        width: calc((100% - 30px) / 2);
+    }
+}
+
+@media (max-width: 480px) {
+    app-movie-card {
+        width: 100%;
+        min-width: 100%;
+    }
+}
