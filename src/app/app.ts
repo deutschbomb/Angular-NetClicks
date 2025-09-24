@@ -6,6 +6,4 @@ import { Component, signal } from '@angular/core';
   standalone: false,
   styleUrl: './app.css'
 })
-export class App {
-  
-}
+export class App {}

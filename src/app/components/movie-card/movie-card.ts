@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { every } from 'rxjs';
+import { Movie } from '../../models/movie.model';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,5 +8,5 @@ import { every } from 'rxjs';
   styleUrl: './movie-card.css'
 })
 export class MovieCard {
-  @Input() title: string = ''
+  @Input() movie!: Movie 
 }

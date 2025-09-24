@@ -1,0 +1,15 @@
+.content-main a {
+    line-height: 17px;
+    text-decoration: none;
+
+    color: rgb(0, 0, 0);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.content-main a:hover {
+    color: rgb(255, 73, 73);
+}

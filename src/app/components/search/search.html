@@ -1,9 +1,16 @@
 <section class="search">
   <div class="container">
     <div class="search-box">
-      <input type="text" placeholder="Что хотите посмотреть?" name="" id="search-input" />
+      <input
+        type="text"
+        placeholder="Что хотите посмотреть?"
+        name=""
+        id="search-input"
+        [value]="searchString"
+        (input)="updateValue($event)"
+      />
 
-      <button id="search-button">
+      <button id="search-button" (click)="updateSearch($event)">
         <img src="./icons/search.svg" alt="search" />
         <span>Найти</span>
       </button>

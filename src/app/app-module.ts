@@ -7,6 +7,9 @@ import { MovieCard } from './components/movie-card/movie-card';
 import { Header } from './components/header/header';
 import { Sidebar } from './components/sidebar/sidebar';
 import { Search } from './components/search/search';
+import { CatalogPage } from './pages/catalog-page/catalog-page';
+import { MoviePage } from './pages/movie-page/movie-page';
+import { NotFound } from './pages/not-found/not-found';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { Search } from './components/search/search';
     MovieCard,
     Header,
     Sidebar,
-    Search
+    Search,
+    CatalogPage,
+    MoviePage,
+    NotFound,
   ],
   imports: [
     BrowserModule,

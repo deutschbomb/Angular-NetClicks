@@ -1,7 +1,19 @@
 
-.content-cards__item {
+:host {
     width: calc((100% - 30px * 2) / 3);
 
+    @media (max-width: 991px) {
+        width: calc((100% - 30px) / 2);
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
+        min-width: 100%;
+    }
+
+}
+
+.content-cards__item {
     text-decoration: none;
 }
 
@@ -68,17 +80,4 @@
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-}
-
-@media (max-width: 991px) {
-    .content-cards__item {
-        width: calc((100% - 30px) / 2);
-    }
-}
-
-@media (max-width: 480px) {
-    .content-cards__item {
-        width: 100%;
-        min-width: 100%;
-    }
 }

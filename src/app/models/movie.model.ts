@@ -5,5 +5,7 @@ export interface Movie {
     genres:    string,
     rating: number,
     link:   string,
-    image:  string
+    image:  string,
+    plotFirst: string
+    plotSecond?: string
 }
