@@ -8,6 +8,7 @@
 2. [Layout: Main page and movie page](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/d2274357cb606ce22fafd2e5f4cf1f3505ab4dae)
 3. [JavaScript: Searching event](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/0f5d0c71b201c02982c2e26780b8062a410a02b4)
 4. [Angular: Integration in project](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/b8c4ea3410401ac6f5a84ecb1cad18ade0521b0b)
+5. [Angular: Search and routing](https://github.com/deutschbomb/Frontend-Practice--Streaming-Service/commit/9fc70b1acd549cc2bed8fd30db2eda261c7834c9)
 
 ---
 
