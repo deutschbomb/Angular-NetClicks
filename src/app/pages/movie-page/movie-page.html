@@ -3,32 +3,32 @@
     <div class="content-box">
       <div class="content-main">
         @if (movie) {
-        <div class="content-film">
-          <div class="content-film__img">
+        <div class="content-movie">
+          <div class="content-movie__img">
             <img [src]="movie.image" [alt]="movie.original" />
           </div>
 
-          <div class="content-film__info">
-            <div class="content-film__info__text">
-              <div class="content-film__info__title">
+          <div class="content-movie__info">
+            <div class="content-movie__info__text">
+              <div class="content-movie__info__title">
                 <h1>{{ movie.title }},</h1>
                 <p>{{ movie.original }}</p>
               </div>
 
-              <p class="content-film__info__description">{{ movie.genres }}</p>
+              <p class="content-movie__info__description">{{ movie.genres }}</p>
 
-              <p class="content-film__info__rating">{{ movie.rating }}</p>
+              <p class="content-movie__info__rating">{{ movie.rating }}</p>
 
-              <p class="content-film__info__plot">
+              <p class="content-movie__info__plot">
                 {{ movie.plotFirst }}
               </p>
 
-              <p class="content-film__info__plot">
+              <p class="content-movie__info__plot">
                 {{ movie.plotSecond }}
               </p>
             </div>
 
-            <div class="content-film__info__controls">
+            <div class="content-movie__info__controls">
               <button>Смотреть</button>
             </div>
           </div>

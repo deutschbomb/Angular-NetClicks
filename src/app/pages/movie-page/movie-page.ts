@@ -18,11 +18,11 @@ export class MoviePage implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     private _moviesService: MoviesSearch
-  ) {}
-
+  ) { }
+  
   ngOnInit(): void {
     const id = this._route.snapshot.paramMap.get('id')
-
+    
     this.movies = this._moviesService.allMovies
     this._initMovie(Number(id))
   }

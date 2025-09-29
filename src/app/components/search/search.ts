@@ -31,4 +31,13 @@ export class Search {
   public updateSearch(event: Event) {
     this._movieService.searchString = this.searchString
   }
+
+  /**
+   * TODO: Describe method
+   * 
+   * @param event
+   */
+  public pressEnter(event: Event) {
+    this.updateSearch(event)
+  }
 }

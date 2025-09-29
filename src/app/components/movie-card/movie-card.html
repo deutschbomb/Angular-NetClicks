@@ -10,5 +10,7 @@
 
   <p class="content-cards__item__description">{{ movie.genres }}</p>
 
-  <p class="content-cards__item__rating">{{ movie.rating }}</p>
+  <p class="content-cards__item__rating" [ngStyle]="{ color: colorRating(movie.rating) }">
+    {{ movie.rating }}
+  </p>
 </a>

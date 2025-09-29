@@ -24,9 +24,12 @@
 }
 
 .content-cards__item__img {
-    margin-bottom: 12px;
+    margin-bottom: 12px;    
 }
 
+.content-cards__item__img img {
+    border-radius: 10px;
+}
 
 .content-cards__item__title {
     display: flex;
@@ -74,7 +77,6 @@
     
     line-height: 19px;
 
-    color: rgb(4, 163, 30);
     font-family: "Inter", sans-serif;
     font-size: 16px;
     font-optical-sizing: auto;

@@ -15,7 +15,7 @@ export class MoviesSearch {
     return this._movies
   }
   public get filteredMovies() : Movie[] {
-    return this._movies.filter((item) => item.title.includes(this._searchString))
+    return this._movies.filter((item) => item.title.toLowerCase().startsWith(this._searchString.toLowerCase()))
   }
 
   public get searchString(): string {
