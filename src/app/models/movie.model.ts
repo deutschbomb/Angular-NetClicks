@@ -6,6 +6,7 @@ export interface Movie {
     rating: number,
     link:   string,
     image:  string,
+    banner?: string,
     plotFirst: string
     plotSecond?: string
 }

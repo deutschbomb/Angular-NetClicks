@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Movie } from '../../models/movie.model';
-import { MOVIES } from '../../constants/movies.constants';
 import { MoviesSearch } from '../../services/movies-search';
 
 @Component({

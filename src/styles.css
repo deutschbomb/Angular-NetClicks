@@ -1,3 +1,8 @@
+
+:root {
+    --width-item-nearby: calc(670px / 1.5);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -38,12 +43,6 @@ body {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-}
-
-.content-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
 }
 
 @media (max-width: 768px) {

@@ -10,6 +10,7 @@ import { Search } from './components/search/search';
 import { CatalogPage } from './pages/catalog-page/catalog-page';
 import { MoviePage } from './pages/movie-page/movie-page';
 import { NotFound } from './pages/not-found/not-found';
+import { MainPage } from './pages/main-page/main-page';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NotFound } from './pages/not-found/not-found';
     CatalogPage,
     MoviePage,
     NotFound,
+    MainPage,
   ],
   imports: [
     BrowserModule,

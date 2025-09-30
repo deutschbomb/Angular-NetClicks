@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesSearch } from '../../services/movies-search';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -10,7 +11,10 @@ import { MoviesSearch } from '../../services/movies-search';
 export class Search {
   public searchString: string = ''
 
-  constructor(private _movieService: MoviesSearch) {}
+  constructor(
+    private _movieService: MoviesSearch,
+    private _router: Router
+  ) {}
 
   /**
    * TODO: Describe method
@@ -38,6 +42,8 @@ export class Search {
    * @param event
    */
   public pressEnter(event: Event) {
+    this._router.navigate(['/search'])
+
     this.updateSearch(event)
   }
 }

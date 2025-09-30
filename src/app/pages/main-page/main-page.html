@@ -1,0 +1,17 @@
+<!-- TODO: Improve carousel -->
+
+<section class="content">
+  <div class="container">
+    <div class="content-box">
+      <div class="content-main">
+        <div class="carousel">
+          @for (item of carouselArray; track $index) {
+          <div class="carousel-item" (click)="changeCard($event, $index)">
+            <img [src]="item.banner" [alt]="item.original" />
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
