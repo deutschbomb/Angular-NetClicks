@@ -4,13 +4,38 @@
   <div class="container">
     <div class="content-box">
       <div class="content-main">
-        <div class="carousel">
-          @for (item of carouselArray; track $index) {
-          <div class="carousel-item" (click)="changeCard($event, $index)">
-            <img [src]="item.banner" [alt]="item.original" />
-          </div>
-          }
+        <div class="carousel-container">
+          <!-- <div class="carousel-vignette">
+            <div class="carousel-vignette__left-vine" (click)="previous()"></div>
+            <div class="carousel-vignette__right-vine" (click)="next()"></div>
+          </div> -->
+          <a
+            [routerLink]="[carouselArray[0].link, carouselArray[0].id]"
+            class="carousel-item"
+            [class.current]="_prev()"
+            (click)="changeCard($event, 0)"
+          >
+            <img [src]="carouselArray[0].banner" [alt]="carouselArray[0].original" />
+          </a>
+          <a
+            [routerLink]="[carouselArray[1].link, carouselArray[1].id]"
+            class="carousel-item"
+            [class.current]="_curr()"
+            (click)="changeCard($event, 1)"
+          >
+            <img [src]="carouselArray[1].banner" [alt]="carouselArray[1].original" />
+          </a>
+          <a
+            [routerLink]="[carouselArray[2].link, carouselArray[2].id]"
+            class="carousel-item"
+            [class.current]="_next()"
+            (click)="changeCard($event, 2)"
+          >
+            <img [src]="carouselArray[2].banner" [alt]="carouselArray[2].original" />
+          </a>
         </div>
+        <button (click)="previous()">prev</button>
+        <button (click)="next()">nxt</button>
       </div>
     </div>
   </div>

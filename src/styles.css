@@ -1,8 +1,3 @@
-
-:root {
-    --width-item-nearby: calc(670px / 1.5);
-}
-
 * {
     box-sizing: border-box;
 }
@@ -34,7 +29,7 @@ body {
 
 .content-main__title {
     margin: 0 0 25px;
-    
+
     line-height: 29px;
 
     color: rgb(0, 0, 0);
