@@ -1,4 +1,8 @@
-import { NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import {
+  NgModule,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
@@ -11,6 +15,7 @@ import { CatalogPage } from './pages/catalog-page/catalog-page';
 import { MoviePage } from './pages/movie-page/movie-page';
 import { NotFound } from './pages/not-found/not-found';
 import { MainPage } from './pages/main-page/main-page';
+import { Carousel } from './components/carousel/carousel';
 
 @NgModule({
   declarations: [
@@ -23,15 +28,10 @@ import { MainPage } from './pages/main-page/main-page';
     MoviePage,
     NotFound,
     MainPage,
+    Carousel,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection()
-  ],
-  bootstrap: [App]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [provideBrowserGlobalErrorListeners(), provideZonelessChangeDetection()],
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
