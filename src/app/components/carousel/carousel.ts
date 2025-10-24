@@ -20,7 +20,6 @@ export class Carousel {
     this._movies = this._moviesService.allMovies;
 
     this._initCarousel([2, 0, 4]);
-    // this._initCarousel([1, 2, 0, 4, 3]);
 
     this._medianIndex = Math.floor(this.carouselArray.length / 2);
     this._currentIndex = this._medianIndex;
@@ -63,6 +62,7 @@ export class Carousel {
    */
   public prevItem() {
     this._currentIndex = this._getCarouselItem(-1);
+    // console.log(this._currentIndex);
   }
 
   /**
@@ -70,6 +70,22 @@ export class Carousel {
    */
   public nextItem() {
     this._currentIndex = this._getCarouselItem(1);
+    // console.log(this._currentIndex);
+  }
+
+  /**
+   * TODO: Update comment
+   */
+  public currentItem(index: number): string {
+    if (index == this._currentIndex) return 'active';
+    else return '';
+  }
+
+  /**
+   * TODO: Update comment
+   */
+  public toItem(index: number) {
+    this._currentIndex = index;
   }
 
   /**
@@ -88,7 +104,7 @@ export class Carousel {
   /**
    * TODO: Update comment
    */
-  private _getCarouselItem(direction: number) {
+  private _getCarouselItem(direction: number): number {
     return (this._currentIndex + direction + this.carouselArray.length) % this.carouselArray.length;
   }
 }

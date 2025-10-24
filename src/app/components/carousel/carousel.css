@@ -4,25 +4,69 @@
   width: 100%;
   height: 376px;
 
+  /* border: 1px solid blue; */
+
   overflow: hidden;
 }
 
 .indicators {
   position: absolute;
+  bottom: 0;
+  left: 50%;
   z-index: 3;
 
-  width: 100px;
-  height: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 8px 10px;
 
-  border-radius: 10px;
+  width: 140px;
+  height: 28px;
 
-  background-color: red;
+  border-radius: 16px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  translate: -50% -50%;
 }
 
-.navigation {
+.indicator {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  border-radius: 28px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+
+  transition: all 200ms ease-in-out;
+
+  cursor: pointer;
+}
+
+.indicator:hover:not(.indicator.active) {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.indicator.active {
+  aspect-ratio: 2 / 1;
+
+  background-color: rgba(255, 255, 255, 1);
+
+  cursor: default;
+}
+
+.button {
   position: absolute;
   top: 0;
   z-index: 2;
+
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 12px;
 
   width: calc((100% - 670px) / 2);
   height: 100%;
@@ -30,31 +74,42 @@
   /* border: 1px solid orange; */
   border: none;
 
-  font-family: 'Inter', sans-serif;
-  font-size: 96px;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-
   cursor: pointer;
 }
 
-.prev-button {
+.button img {
+  width: 32px;
+  height: auto;
+
+  /* border: 1px solid red; */
+
+  opacity: 0.5;
+
+  transition: all 100ms ease;
+}
+
+.button:hover img {
+  opacity: 0.8;
+
+  transform: scaleY(1.2);
+}
+
+.button.left {
   left: 0;
+
+  justify-content: start;
 
   background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
   background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-
-  padding-left: 96px;
 }
 
-.next-button {
+.button.right {
   right: 0;
 
-  background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  justify-content: end;
 
-  padding-right: 96px;
+  background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(270deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
 
 .carousel-content {
@@ -62,11 +117,12 @@
   height: 100%;
 
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .carousel-item {
   position: absolute;
+  left: 50%;
+  z-index: 0;
 
   display: inline-flex;
   justify-content: center;
@@ -79,7 +135,7 @@
 
   overflow: hidden;
 
-  transition: all 500ms ease-in-out, z-index 500ms step-start;
+  transition: all 400ms ease-in-out;
   pointer-events: none;
 }
 
@@ -89,42 +145,39 @@
   object-fit: contain;
 }
 
-.prev,
-.next {
-  z-index: 0;
-
+.carousel-item.prev,
+.carousel-item.next {
   opacity: 0.7;
 }
 
-.prev {
+.carousel-item.prev {
   left: 0;
 
   transform: perspective(3px) translate3d(-17%, 0, -1px);
   pointer-events: auto;
 }
 
-.curr {
-  z-index: 1;
-  left: 50%;
-
-  box-shadow: 0 0 50px rgb(0, 0, 0);
-
-  transform: perspective(none) translate3d(-50%, 0, 0);
-  pointer-events: auto;
-}
-
-.next {
+.carousel-item.next {
   right: 0;
 
   transform: perspective(3px) translate3d(17%, 0, -1px);
   pointer-events: auto;
 }
 
-/* TOOD: Add transform for smooth appearance */
-.hidden {
-  display: none;
+.carousel-item.curr {
+  z-index: 1;
 
-  opacity: 0;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
 
+  transform: perspective(none) translate3d(-50%, 0, 0);
+  pointer-events: auto;
+}
+
+.carousel-item.hidden {
+  left: 50%;
+
+  opacity: 0.5;
+
+  transform: perspective(1px) translate3d(-100%, 0, -1px);
   pointer-events: auto;
 }

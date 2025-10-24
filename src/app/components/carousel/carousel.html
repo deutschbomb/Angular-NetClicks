@@ -1,8 +1,12 @@
 <div class="carousel-container">
-  <!-- <div class="indicators"></div> -->
+  <div class="indicators">
+    @for (item of carouselArray; track $index) {
+    <div class="indicator" [ngClass]="currentItem($index)" (click)="toItem($index)"></div>
+    }
+  </div>
 
-  <button class="navigation prev-button" (click)="prevItem()">
-    <img src="./icons/left-chevron.svg" alt="&lt;" />
+  <button class="left button" (click)="prevItem()">
+    <img src="./icons/left-chevron.svg" alt="" />
   </button>
 
   <div class="carousel-content">
@@ -21,7 +25,7 @@
     <!-- <div class="endClonedCarouselItem"></div> -->
   </div>
 
-  <button class="navigation next-button" (click)="nextItem()">
-    <img src="./icons/right-chevron.svg" alt="&gt;" />
+  <button class="right button" (click)="nextItem()">
+    <img src="./icons/right-chevron.svg" alt="" />
   </button>
 </div>
