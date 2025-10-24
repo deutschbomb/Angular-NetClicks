@@ -8,24 +8,29 @@ import { MainPage } from './pages/main-page/main-page';
 const routes: Routes = [
   {
     path: '',
-    component: MainPage
+    component: MainPage,
   },
   {
     path: 'search',
-    component: CatalogPage
+    component: CatalogPage,
   },
   {
     path: 'movie/:id',
-    component: MoviePage
+    component: MoviePage,
+  },
+  {
+    path: 'search/movie/:id',
+    redirectTo: 'movie/:id',
+    pathMatch: 'full',
   },
   {
     path: '**',
-    component: NotFound
-  }
+    component: NotFound,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
