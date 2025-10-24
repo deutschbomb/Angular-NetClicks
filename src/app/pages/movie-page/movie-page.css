@@ -1,130 +1,128 @@
-
 .content-movie {
-    display: flex;
-    justify-content: space-between;
-    gap: 28px;
-    flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  flex-grow: 1;
 }
 
 .content-movie__img {
-    display: flex;
-    justify-content: center;
-    width: calc((100% - 28px) / 2);
+  display: flex;
+  justify-content: center;
+  width: calc((100% - 28px) / 2);
 }
 
 .content-movie__img img {
-    display: block;
-    width: 100%;
-    max-width: 450px;
+  display: block;
+  width: 100%;
+  max-width: 450px;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .content-movie__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: calc((100% - 28px) / 2);
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc((100% - 28px) / 2);
+  gap: 30px;
 }
 
 .content-movie__info__title {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
 }
 
 .content-movie__info__title h1,
 .content-movie__info__title p {
-    margin: 0;
+  margin: 0;
 
-    line-height: 29px;
+  line-height: 29px;
 
-    font-family: "Inter", sans-serif;
-    font-size: 24px;
-    font-optical-sizing: auto;
-    font-style: normal
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .content-movie__info__title h1 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .content-movie__info__title p {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .content-movie__info__text > *:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .content-movie__info__description {
-    margin: 0 0 2px;
+  margin: 0 0 2px;
 
-    line-height: 19px;
+  line-height: 19px;
 
-    color: rgb(134, 134, 134);
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal
+  color: rgb(134, 134, 134);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .content-movie__info__rating {
-    margin: 0 0 29px;
-    
-    line-height: 19px;
+  margin: 0 0 29px;
 
-    color: rgb(4, 163, 30);
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
+  line-height: 19px;
+
+  color: rgb(4, 163, 30);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .content-movie__info__plot {
-    margin: 0 0 18px;
+  margin: 0 0 18px;
 
-    line-height: 17px;
+  line-height: 17px;
 
-    color: rgb(0, 0, 0);
-    font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;    
+  color: rgb(0, 0, 0);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .content-movie__info__controls button {
-    padding: 16px 98px;
+  padding: 16px 98px;
 
-    border: none;
-    border-radius: 5px;
-    outline: none;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 
-    line-height: 17px;
+  line-height: 17px;
 
-    background-color: rgb(73, 73, 255);
-    color: rgb(255, 255, 255);
-    font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  background-color: rgb(73, 73, 255);
+  color: rgb(255, 255, 255);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media (max-width: 991px) {
-    .content-movie {
-        flex-direction: column;
-    }
+  .content-movie {
+    flex-direction: column;
+  }
 
-    .content-movie__img,
-    .content-movie__info {
-        width: 100%;
-    }
+  .content-movie__img,
+  .content-movie__info {
+    width: 100%;
+  }
 }

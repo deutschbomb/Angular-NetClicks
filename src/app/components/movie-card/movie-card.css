@@ -1,85 +1,82 @@
-
 :host {
-    width: calc((100% - 30px * 2) / 3);
+  width: calc((100% - 30px * 2) / 3);
 
-    @media (max-width: 991px) {
-        width: calc((100% - 30px) / 2);
-    }
+  @media (max-width: 991px) {
+    width: calc((100% - 30px) / 2);
+  }
 
-    @media (max-width: 480px) {
-        width: 100%;
-        min-width: 100%;
-    }
-
+  @media (max-width: 480px) {
+    width: 100%;
+    min-width: 100%;
+  }
 }
 
 .content-cards__item {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .content-cards__item__img,
 .content-cards__item__img img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .content-cards__item__img {
-    margin-bottom: 12px;    
+  margin-bottom: 12px;
 }
 
 .content-cards__item__img img {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .content-cards__item__title {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
 .content-cards__item__title h5,
 .content-cards__item__title span {
-    margin: 0;
+  margin: 0;
 
-    line-height: 19px;
+  line-height: 19px;
 
-    color: rgb(0, 0, 0);
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-optical-sizing: auto;
-    font-style: normal;
+  color: rgb(0, 0, 0);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .content-cards__item__title h5 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .content-cards__item__title span {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .content-cards__item__description {
-    margin: 0 0 11px;
+  margin: 0 0 11px;
 
-    line-height: 19px;
+  line-height: 19px;
 
-    color: rgb(134, 134, 134);
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  color: rgb(134, 134, 134);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .content-cards__item__rating {
-    margin: 0;
-    
-    line-height: 19px;
+  margin: 0;
 
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
+  line-height: 19px;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
