@@ -5,27 +5,40 @@
     }
   </div>
 
-  <button class="left button" (click)="prevItem()">
+  <button class="left button" (click)="slideItem(-1)" [disabled]="isTransitioning()">
     <img src="./icons/left-chevron.svg" alt="" />
   </button>
 
   <div class="carousel-content">
-    <!-- <div class="startClonedCarouselItem"></div> -->
-
-    @for (item of carouselArray; track $index) {
+    @if (clonnedLastItem) {
+    <div
+      class="carousel-item"
+      [ngClass]="carouselStart() ? 'prev' : 'hidden'"
+      (transitionend)="onTransitionEnd()"
+    >
+      <img [src]="clonnedLastItem.banner" [alt]="clonnedLastItem.original" />
+    </div>
+    } @for (item of carouselArray; track $index) {
     <a
       [routerLink]="[item.link, item.id]"
       class="carousel-item"
       [ngClass]="getClassByIndex($index)"
+      (transitionend)="onTransitionEnd()"
     >
       <img [src]="item.banner" [alt]="item.original" />
     </a>
+    } @if (clonnedFirstItem) {
+    <div
+      class="carousel-item"
+      [ngClass]="carouselEnd() ? 'next' : 'hidden'"
+      (transitionend)="onTransitionEnd()"
+    >
+      <img [src]="clonnedFirstItem.banner" [alt]="clonnedFirstItem.original" />
+    </div>
     }
-
-    <!-- <div class="endClonedCarouselItem"></div> -->
   </div>
 
-  <button class="right button" (click)="nextItem()">
+  <button class="right button" (click)="slideItem(1)" [disabled]="isTransitioning()">
     <img src="./icons/right-chevron.svg" alt="" />
   </button>
 </div>

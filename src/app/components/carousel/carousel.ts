@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Movie } from '../../models/movie.model';
 import { MoviesSearch } from '../../services/movies-search';
 
@@ -12,7 +12,15 @@ export class Carousel {
   private _movies: Movie[] = [];
   private _currentIndex!: number;
   private _medianIndex!: number;
+
   public carouselArray: Movie[] = [];
+  private _carouselLength!: number;
+  public clonnedFirstItem!: Movie;
+  public clonnedLastItem!: Movie;
+
+  public isTransitioning = signal(false);
+  public carouselStart = signal(false);
+  public carouselEnd = signal(false);
 
   constructor(private _moviesService: MoviesSearch) {}
 
@@ -20,8 +28,11 @@ export class Carousel {
     this._movies = this._moviesService.allMovies;
 
     this._initCarousel([2, 0, 4]);
+    this._carouselLength = this.carouselArray.length;
+    this.clonnedFirstItem = this.carouselArray[0];
+    this.clonnedLastItem = this.carouselArray[this._carouselLength - 1];
 
-    this._medianIndex = Math.floor(this.carouselArray.length / 2);
+    this._medianIndex = Math.floor(this._carouselLength / 2);
     this._currentIndex = this._medianIndex;
   }
 
@@ -31,8 +42,8 @@ export class Carousel {
   public getClonedItem(index: number): Movie | undefined {
     switch (index) {
       case 0:
-        return this.carouselArray[this.carouselArray.length - 1];
-      case this.carouselArray.length - 1:
+        return this.carouselArray[this._carouselLength - 1];
+      case this._carouselLength - 1:
         return this.carouselArray[0];
       default:
         return undefined;
@@ -60,25 +71,29 @@ export class Carousel {
   /**
    * TODO: Update comment
    */
-  public prevItem() {
-    this._currentIndex = this._getCarouselItem(-1);
-    // console.log(this._currentIndex);
+  // public styleTransformDirection(): string | null {}
+
+  /**
+   * TODO: Update comment
+   */
+  public slideItem(direction: number) {
+    if (this.isTransitioning()) return;
+
+    this.isTransitioning.set(true);
+
+    this._currentIndex =
+      (this._currentIndex + direction + this._carouselLength) % this._carouselLength;
+
+    this.carouselStart.update(() => this._currentIndex == 0);
+    this.carouselEnd.update(() => this._currentIndex == this._carouselLength - 1);
   }
 
   /**
    * TODO: Update comment
    */
-  public nextItem() {
-    this._currentIndex = this._getCarouselItem(1);
-    // console.log(this._currentIndex);
-  }
-
-  /**
-   * TODO: Update comment
-   */
-  public currentItem(index: number): string {
+  public currentItem(index: number): string | null {
     if (index == this._currentIndex) return 'active';
-    else return '';
+    else return null;
   }
 
   /**
@@ -91,20 +106,20 @@ export class Carousel {
   /**
    * TODO: Update comment
    */
-  private _initCarousel(idsArray: number[]) {
-    for (let id of idsArray) {
+  public onTransitionEnd() {
+    this.isTransitioning.set(false);
+  }
+
+  /**
+   * TODO: Update comment
+   */
+  private _initCarousel(idArray: number[]) {
+    for (let id of idArray) {
       const movie = this._movies.find((movie) => movie.id === id);
 
       if (movie) {
         this.carouselArray.push(movie);
       }
     }
-  }
-
-  /**
-   * TODO: Update comment
-   */
-  private _getCarouselItem(direction: number): number {
-    return (this._currentIndex + direction + this.carouselArray.length) % this.carouselArray.length;
   }
 }
