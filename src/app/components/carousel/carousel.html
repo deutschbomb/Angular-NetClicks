@@ -1,7 +1,7 @@
 <div class="carousel-container">
-  <div class="indicators">
+  <div class="indicators-container">
     @for (item of carouselArray; track $index) {
-    <div class="indicator" [ngClass]="currentItem($index)" (click)="toItem($index)"></div>
+    <div class="dot" [ngClass]="currentItem($index)" (click)="toItem($index)"></div>
     }
   </div>
 
@@ -10,15 +10,7 @@
   </button>
 
   <div class="carousel-content">
-    @if (clonnedLastItem) {
-    <div
-      class="carousel-item"
-      [ngClass]="carouselStart() ? 'prev' : 'hidden'"
-      (transitionend)="onTransitionEnd()"
-    >
-      <img [src]="clonnedLastItem.banner" [alt]="clonnedLastItem.original" />
-    </div>
-    } @for (item of carouselArray; track $index) {
+    @for (item of carouselArray; track $index) {
     <a
       [routerLink]="[item.link, item.id]"
       class="carousel-item"
@@ -27,14 +19,6 @@
     >
       <img [src]="item.banner" [alt]="item.original" />
     </a>
-    } @if (clonnedFirstItem) {
-    <div
-      class="carousel-item"
-      [ngClass]="carouselEnd() ? 'next' : 'hidden'"
-      (transitionend)="onTransitionEnd()"
-    >
-      <img [src]="clonnedFirstItem.banner" [alt]="clonnedFirstItem.original" />
-    </div>
     }
   </div>
 
