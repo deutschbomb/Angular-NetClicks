@@ -1,4 +1,5 @@
-<a [routerLink]="[movie.link, movie.id]" class="content-cards__item">
+<!-- TODO: Fix route -->
+<a href="{{ movie.link }}/{{ movie.id }}" class="content-cards__item">
   <div class="content-cards__item__img">
     <img [src]="movie.image" [alt]="movie.original" />
   </div>
