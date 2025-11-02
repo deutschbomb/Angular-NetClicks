@@ -12,7 +12,6 @@
   margin: 0;
   padding: 8px 10px;
 
-  width: 133px;
   height: 28px;
 
   border-radius: 16px;
@@ -32,7 +31,7 @@
 
   background-color: rgba(255, 255, 255, 0.5);
 
-  transition: all 200ms ease-in-out;
+  transition: all 400ms ease-in-out, background-color 150ms ease-in-out;
 
   cursor: pointer;
 }
@@ -83,10 +82,15 @@
   transition: all 100ms ease;
 }
 
-.button:hover img {
+.button:hover img,
+.button:focus img {
   opacity: 0.8;
 
   transform: scaleY(1.2);
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button.left {
@@ -187,6 +191,16 @@
 
   transform: perspective(0) translate3d(-50%, 0, 0);
   pointer-events: auto;
+}
+
+.carousel-item.curr:hover,
+.carousel-item.curr:focus {
+  transition: all 200ms ease-in-out;
+  transform: scale(1.01) translate3d(calc(-50% / 1.01), 0, 0);
+}
+
+.carousel-item.curr:focus {
+  outline: none;
 }
 
 .carousel-item.hidden {

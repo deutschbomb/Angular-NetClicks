@@ -1,5 +1,5 @@
 <div class="carousel-container">
-  <div class="indicators-container">
+  <div class="indicators-container" [ngStyle]="{ 'width.px': 44 * carouselLength }">
     @for (item of carouselArray; track $index) {
     <div class="dot" [ngClass]="currentItem($index)" (click)="toItem($index)"></div>
     }
@@ -15,6 +15,7 @@
       [routerLink]="[item.link, item.id]"
       class="carousel-item"
       [ngClass]="getClassByIndex($index)"
+      [tabIndex]="getClassByIndex($index) != 'curr' ? -1 : 0"
       (transitionend)="onTransitionEnd()"
     >
       <img [src]="item.banner" [alt]="item.original" />

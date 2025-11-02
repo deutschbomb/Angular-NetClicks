@@ -3,9 +3,8 @@ import { Movie } from '../../models/movie.model';
 import { MoviesSearch } from '../../services/movies-search';
 
 /**
- * Now carousel works only with 3 objects in array
- *
- * TODO: Adapt component for screen sizes and for more or less objects in array
+ * TODO: Adapt component for screen sizes
+ * TODO: Adapt transition for 2+ item sliding
  */
 
 @Component({
@@ -20,14 +19,17 @@ export class Carousel {
   private _currentIndex!: number;
   private _medianIndex!: number;
   private _carouselLength!: number;
+  private _carouselMaxIndex!: number;
 
   // Public fields
   public carouselArray: Movie[] = [];
 
   // Signals
-  private _carouselStart = signal(false);
-  private _carouselEnd = signal(false);
   public isTransitioning = signal(false);
+
+  public get carouselLength(): number {
+    return this._carouselLength;
+  }
 
   constructor(private _moviesService: MoviesSearch) {}
 
@@ -41,6 +43,7 @@ export class Carousel {
 
     this._initCarousel([2, 0, 4]);
     this._carouselLength = this.carouselArray.length;
+    this._carouselMaxIndex = this._carouselLength - 1;
 
     this._medianIndex = Math.floor(this._carouselLength / 2);
     this._currentIndex = this._medianIndex;
@@ -49,7 +52,7 @@ export class Carousel {
   //#endregion
 
   //#region User methods
-  // Private methods
+  //#region Private methods
 
   /**
    * TODO: !!! EDIT TEMPORARY SOLUTION !!!
@@ -66,7 +69,9 @@ export class Carousel {
     }
   }
 
-  // Public methods
+  //#endregion
+
+  //#region Public methods
 
   /**
    * TODO: Update comment
@@ -80,6 +85,10 @@ export class Carousel {
    * TODO: Update comment
    */
   public toItem(index: number) {
+    if (this.isTransitioning() || index == this._currentIndex) return;
+
+    this.isTransitioning.set(true);
+
     this._currentIndex = index;
   }
 
@@ -93,9 +102,6 @@ export class Carousel {
 
     this._currentIndex =
       (this._currentIndex + direction + this._carouselLength) % this._carouselLength;
-
-    this._carouselStart.update(() => this._currentIndex == 0);
-    this._carouselEnd.update(() => this._currentIndex == this._carouselLength - 1);
   }
 
   /**
@@ -103,7 +109,6 @@ export class Carousel {
    */
   public getClassByIndex(index: number): string {
     let relativeIndex = index - this._currentIndex;
-    console.log(index);
 
     switch (relativeIndex) {
       case -1:
@@ -113,9 +118,13 @@ export class Carousel {
       case 1:
         return 'next';
       default:
-        if (this._carouselStart()) return 'prev';
-        else if (this._carouselEnd()) return 'next';
-        else return 'hidden';
+        if (relativeIndex == this._carouselMaxIndex) {
+          return 'prev';
+        } else if (relativeIndex == -this._carouselMaxIndex) {
+          return 'next';
+        } else {
+          return 'hidden';
+        }
     }
   }
 
@@ -125,6 +134,8 @@ export class Carousel {
   public onTransitionEnd() {
     this.isTransitioning.set(false);
   }
+
+  //#endregion
 
   //#endregion
 }
